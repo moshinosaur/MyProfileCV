@@ -1,0 +1,608 @@
+
+:root {
+    --navy: #353f58;
+    --grey: #e6e8ed;
+    --ink: #2d3340;
+    --muted: #626b79;
+    --line: #c4c9d1;
+    --desk: #e6e8ec;
+
+    --head: "Poppins", "Segoe UI", Arial, sans-serif;
+    --body: "Lato", "Segoe UI", Arial, sans-serif;
+
+    --side: 285px;
+}
+
+/* Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--desk);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 16px;
+    line-height: 1.45;
+    padding: 24px 16px 32px;
+}
+
+a {
+    color: inherit;
+    overflow-wrap: anywhere;
+}
+
+svg {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+:focus-visible {
+    outline: 3px solid #2563eb;
+    outline-offset: 3px;
+}
+
+/* Save as PDF button */
+
+.toolbar {
+    max-width: 960px;
+    margin: 0 auto 16px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.toolbar button {
+    font: 600 14px var(--head);
+    color: var(--navy);
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 10px 18px;
+    cursor: pointer;
+}
+
+.toolbar button:hover {
+    background: var(--navy);
+    color: #fff;
+    border-color: var(--navy);
+}
+
+/* CV layout */
+
+.cv {
+    position: relative;
+    max-width: 960px;
+    margin: 0 auto 32px;
+    background: #fff;
+    display: grid;
+    grid-template-columns: var(--side) minmax(0, 1fr);
+    box-shadow: 0 18px 50px rgba(30, 38, 58, 0.2);
+}
+
+/* Header */
+
+.banner {
+    grid-column: 1 / -1;
+    min-height: 155px;
+    padding: 30px 35px 30px calc(var(--side) + 45px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--navy);
+    color: #fff;
+}
+
+.banner h1 {
+    font: 700 2.45rem/1.2 var(--head);
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+}
+
+.banner p {
+    font: 300 0.95rem var(--head);
+    text-transform: uppercase;
+    letter-spacing: 0.045em;
+    margin-top: 5px;
+}
+
+.banner .target-job {
+    font-size: 0.83rem;
+    font-weight: 600;
+}
+
+/* Profile photo */
+
+.photo {
+    position: absolute;
+    top: 25px;
+    left: calc((var(--side) - 175px) / 2);
+    width: 175px;
+    height: 175px;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 30%;
+    background: #fff;
+    z-index: 2;
+}
+
+/* Sidebar */
+
+.side {
+    min-width: 0;
+    background: var(--grey);
+    padding: 84px 24px 35px 26px;
+}
+
+.side-section {
+    margin-bottom: 23px;
+}
+
+.side h2 {
+    font: 700 0.98rem var(--head);
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-bottom: 2px solid #a8afba;
+    padding-bottom: 7px;
+    margin-bottom: 12px;
+}
+
+.side h3 {
+    font: 700 0.88rem var(--body);
+    color: var(--navy);
+    margin: 11px 0 4px;
+}
+
+/* Contact information */
+
+.contact {
+    list-style: none;
+}
+
+.contact li {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    margin-bottom: 11px;
+    font-size: 0.87rem;
+    overflow-wrap: anywhere;
+}
+
+.contact-icon {
+    flex: 0 0 21px;
+    color: var(--navy);
+    font-size: 0.78rem;
+    font-weight: 700;
+    margin-top: 2px;
+}
+
+.contact a {
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+/* Bullet lists */
+
+.bullets {
+    list-style: none;
+}
+
+.bullets li {
+    position: relative;
+    padding-left: 16px;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+    overflow-wrap: anywhere;
+}
+
+.bullets li::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 0.65em;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--navy);
+}
+
+/* Main content */
+
+.content {
+    min-width: 0;
+    position: relative;
+    padding: 30px 34px 35px 50px;
+}
+
+.content::before {
+    content: "";
+    position: absolute;
+    left: 22px;
+    top: 38px;
+    bottom: 35px;
+    width: 2px;
+    background: var(--line);
+}
+
+.content-section {
+    position: relative;
+    margin-bottom: 26px;
+}
+
+.content h2 {
+    font: 700 1.03rem var(--head);
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 0.075em;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 7px;
+    margin-bottom: 12px;
+}
+
+.content p {
+    font-size: 0.92rem;
+    margin-bottom: 6px;
+}
+
+/* Section icons */
+
+.icon {
+    position: absolute;
+    left: -43px;
+    top: -3px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.icon svg {
+    width: 17px;
+    height: 17px;
+}
+
+/* Education and project entries */
+
+.entry {
+    position: relative;
+    margin-bottom: 17px;
+}
+
+.entry::before {
+    content: "";
+    position: absolute;
+    left: -33px;
+    top: 6px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid var(--navy);
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.entry h3 {
+    font: 600 0.97rem var(--head);
+    color: var(--ink);
+}
+
+.date {
+    font: 500 0.83rem var(--head);
+    color: var(--muted);
+}
+
+.sub {
+    color: var(--muted);
+    font-size: 0.87rem !important;
+}
+
+.project-link {
+    font-size: 0.86rem !important;
+    margin-top: 7px;
+}
+
+.project-link a,
+.bullets a {
+    color: var(--navy);
+    text-decoration: underline;
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.88rem;
+}
+
+/* Mobile layout */
+
+@media (max-width: 800px) {
+    body {
+        padding: 12px;
+    }
+
+    .cv {
+        grid-template-columns: 1fr;
+    }
+
+    .banner {
+        min-height: 0;
+        padding: 28px 15px 80px;
+        text-align: center;
+    }
+
+    .banner h1 {
+        font-size: 1.8rem;
+        overflow-wrap: anywhere;
+    }
+
+    .banner p {
+        font-size: 0.82rem;
+    }
+
+    .photo {
+        position: relative;
+        top: auto;
+        left: auto;
+        display: block;
+        width: 145px;
+        height: 145px;
+        margin: -62px auto 0;
+    }
+
+    .side {
+        padding: 28px 24px;
+    }
+
+    .content {
+        padding: 30px 20px 30px 52px;
+    }
+
+    .content::before {
+        left: 22px;
+    }
+
+    .icon {
+        left: -42px;
+    }
+
+    .entry::before {
+        left: -32px;
+    }
+}
+
+/* A4 one-page PDF printing */
+
+@page {
+    size: A4 portrait;
+    margin: 4mm;
+}
+
+@media print {
+    html,
+    body {
+        width: 100%;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #fff;
+        font-size: 7pt;
+        line-height: 1.2;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .toolbar,
+    footer {
+        display: none !important;
+    }
+
+    .cv {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        box-shadow: none;
+        grid-template-columns: 29% 71%;
+        break-inside: avoid;
+    }
+
+    .banner {
+        min-height: 85px;
+        padding: 12px 10px 12px calc(29% + 15px);
+    }
+
+    .banner h1 {
+        font-size: 17pt;
+    }
+
+    .banner p {
+        font-size: 6.5pt;
+        margin-top: 2px;
+    }
+
+    .banner .target-job {
+        font-size: 7pt;
+    }
+
+    /* Profile photo for printing */
+
+    .photo {
+        top: 12px;
+        left: calc((29% - 82px) / 2);
+        width: 82px;
+        height: 82px;
+        border-width: 3px;
+        object-fit: cover;
+        object-position: center top;
+    }
+
+    /* Sidebar */
+
+    .side {
+        padding: 45px 9px 10px;
+        min-width: 0;
+        background: var(--grey);
+    }
+
+    .side-section {
+        margin-bottom: 10px;
+    }
+
+    .side h2 {
+        font-size: 7pt;
+        padding-bottom: 3px;
+        margin-bottom: 5px;
+    }
+
+    .side h3 {
+        font-size: 6.5pt;
+        margin: 5px 0 2px;
+    }
+
+    /* Contact */
+
+    .contact li {
+        font-size: 6.2pt;
+        gap: 4px;
+        margin-bottom: 4px;
+        line-height: 1.15;
+    }
+
+    .contact-icon {
+        flex-basis: 14px;
+        font-size: 6pt;
+    }
+
+    /* Lists */
+
+    .bullets li {
+        font-size: 6.5pt;
+        padding-left: 10px;
+        margin-bottom: 2px;
+        line-height: 1.2;
+    }
+
+    .bullets li::before {
+        width: 3px;
+        height: 3px;
+        left: 2px;
+    }
+
+    /* Main content */
+
+    .content {
+        padding: 13px 10px 10px 29px;
+    }
+
+    .content::before {
+        left: 13px;
+        top: 16px;
+        bottom: 10px;
+    }
+
+    .content-section {
+        margin-bottom: 8px;
+        break-inside: avoid;
+    }
+
+    .content h2 {
+        font-size: 7.5pt;
+        padding-bottom: 3px;
+        margin-bottom: 5px;
+    }
+
+    .content p,
+    .content .bullets li {
+        font-size: 6.8pt;
+        line-height: 1.2;
+        margin-bottom: 3px;
+    }
+
+    .entry {
+        margin-bottom: 6px;
+        break-inside: avoid;
+    }
+
+    .entry h3 {
+        font-size: 7pt;
+        line-height: 1.2;
+    }
+
+    .entry .sub,
+    .date,
+    .project-link {
+        font-size: 6.3pt !important;
+    }
+
+    /* Timeline icons */
+
+    .icon {
+        left: -25px;
+        top: -1px;
+        width: 20px;
+        height: 20px;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .icon svg {
+        width: 12px;
+        height: 12px;
+    }
+
+    .entry::before {
+        left: -21px;
+        top: 3px;
+        width: 5px;
+        height: 5px;
+        border-width: 1px;
+    }
+
+    /* Links and colors */
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .bullets li::before,
+    .entry::before,
+    .content::before {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
